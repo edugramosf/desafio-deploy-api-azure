@@ -15,10 +15,19 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: UseDotNet@2
+  displayName: 'Install .Net SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo "Verificando versão do .NET SDK..."
+    dotnet --version
+  displayName: 'Check .NET SDK Version'
+    
+- script: dotnet restore $(solution)
+  displayName: 'Restore Solution'
+
+- script: dotnet build $(solution) --configuration $(buildConfiguration)
+  displayName: 'Build Solution'
