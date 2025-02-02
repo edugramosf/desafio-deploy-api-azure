@@ -10,7 +10,7 @@ pool:
   name: 'Default' # Usa o agente self-hosted
 
 variables:
-  solution: '*.sln'
+  solution: './APITempoDIO/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -26,12 +26,8 @@ steps:
     dotnet --version
   displayName: 'Check .NET SDK Version'
     
-- script: |
-    cd C:\Users\eduar\agent\_work\1\s\APITempoDIO
-    dotnet restore
+- script: dotnet restore $(solution)
   displayName: 'Restore Solution'
 
-- script: |
-    cd C:\Users\eduar\agent\_work\1\s\APITempoDIO
-    dotnet build --configuration $(buildConfiguration)
+- script: dotnet build $(solution) --configuration $(buildConfiguration)
   displayName: 'Build Solution'
