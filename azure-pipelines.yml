@@ -41,6 +41,4 @@ steps:
     repository: 'api-dio-test'
     command: 'buildAndPush'
     dockerfile: './APITempoDIO/APITempoDIO/Dockerfile'
-    tags: |
-      latest
-      $(Build.BuildId) #Isto cria uma tag única para cada build
+    tags: 'latest'
