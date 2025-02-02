@@ -34,3 +34,10 @@ steps:
 
 - script: dotnet test $(solution) --configuration $(buildConfiguration) --no-build --collect:"Xplat Code Coverage"
   displayName: 'Build Solution'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'ACR-Connection'
+    repository: 'api-dio-test'
+    command: 'buildAndPush'
+    Dockerfile: './APITempoDIO/APITempoDIO/Dockerfile'
