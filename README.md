@@ -17,7 +17,7 @@ Este repositório contém um projeto que demonstra o **deploy de uma API na nuve
 
 - **.NET 8 SDK** instalado
 - **Conta no Azure** (com permissões para realizar deploy)
-- **Docker (caso deseje testar via container)
+- **Docker** (caso deseje testar via container)
 
 ---
 
