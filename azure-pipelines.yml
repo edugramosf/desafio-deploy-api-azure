@@ -40,4 +40,4 @@ steps:
     containerRegistry: 'ACR-Connection'
     repository: 'api-dio-test'
     command: 'buildAndPush'
-    Dockerfile: './APITempoDIO/APITempoDIO/Dockerfile'
+    dockerfile: './APITempoDIO/APITempoDIO/Dockerfile'
