@@ -33,7 +33,7 @@ steps:
   displayName: 'Build Solution'
 
 - script: dotnet test $(solution) --configuration $(buildConfiguration) --no-build --collect:"Xplat Code Coverage"
-  displayName: 'Build Solution'
+  displayName: 'Run Tests'
 
 - task: Docker@2
   inputs:
