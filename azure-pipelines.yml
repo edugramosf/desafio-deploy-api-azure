@@ -26,8 +26,12 @@ steps:
     dotnet --version
   displayName: 'Check .NET SDK Version'
     
-- script: dotnet restore $(solution)
+- script: |
+    cd C:\Users\eduar\agent\_work\1\s\APITempoDIO
+    dotnet restore
   displayName: 'Restore Solution'
 
-- script: dotnet build $(solution) --configuration $(buildConfiguration)
+- script: |
+    cd C:\Users\eduar\agent\_work\1\s\APITempoDIO
+    dotnet build --configuration $(buildConfiguration)
   displayName: 'Build Solution'
